@@ -1,27 +1,292 @@
+/* 🔹 Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+.img-index{
+  width: 600px;
+  height: 100px;
+}
+.img-about{
+  width: 200px;
+  height: 100px;
 }
 
+/* 🔹 Container for Page */
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
 
-.blog-card {
-  background: white;
+/* 🔹 Header Section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* 🔹 Blog List */
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* 🔹 Blog Card */
+.blog-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Read More Button */
 button {
-  background: #007bff;
+  background-color: #0073e6;
   color: white;
-  padding: 8px;
+  padding: 10px 15px;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+/* 🔹 Dark Mode Styles */
+.container.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.blog-card.dark {
+  background: #2a2a2a;
+  color: white;
+}
+
+/* 🔹 Responsive Design */
+@media screen and (max-width: 768px) {
+  .blog-list {
+      grid-template-columns: 1fr;
+  }
+
+  h1 {
+      font-size: 28px;
+  }
+}
+
+/* 🔹 MindHaven Vision Page Styling */
+.blog-content {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* 🔹 Dark Mode Styles */
+.container.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.blog-content.dark {
+  background: #2a2a2a;
+  color: white;
+}
+
+.container.dark header h1 {
+  color: #ffffff;
+}
+
+/* 🔹 Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.container.dark header {
+  background: #2a2a2a;
+  box-shadow: none;
+}
+
+/* 🔹 Blog Interaction Section */
+.blog-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.blog-actions button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.blog-actions button:hover {
+  background-color: #dcdcdc;
+}
+
+/* 🔹 Comments Section */
+.comment-section {
+  margin-top: 30px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.comment-section textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.comment-section button {
+  margin-top: 10px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
+
+.comment-section button:hover {
+  background-color: #005bb5;
+}
+
+/* 🔹 Social Sharing */
+.share-buttons {
+  margin-top: 20px;
+}
+
+.share-buttons a {
+  margin-right: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.share-buttons a:nth-child(1) { background: #1da1f2; color: white; } /* Twitter */
+.share-buttons a:nth-child(2) { background: #0077b5; color: white; } /* LinkedIn */
+.share-buttons a:nth-child(3) { background: #4267b2; color: white; } /* Facebook */
+
+.share-buttons a:hover {
+  opacity: 0.8;
+}
+
+.blog-overlay {
+  position: fixed;
+  width: 400px; /* ✅ Defines the size of the circle */
+  height: 400px; /* ✅ Ensures a perfect circle */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ✅ Centers it */
+  border-radius: 60%; /* ✅ Makes it circular */
+  background-image: url("/logo_3.png");
+  background-size: cover; /* ✅ Ensures the image fits properly */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.07;
+  z-index: -1;
+}
+.loading-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px; /* ✅ Size of the spinning image */
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading-animation img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* ✅ Makes it circular */
+  opacity: 0.7; /* ✅ Controls transparency */
+  animation: spin 2s linear infinite; /* ✅ Smooth spinning effect */
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.home-overlay{
+  position: fixed;
+  width: 400px; /* ✅ Defines the size of the circle */
+  height: 400px; /* ✅ Ensures a perfect circle */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ✅ Centers it */
+  border-radius: 60%; /* ✅ Makes it circular */
+  background-image: url("/logo_3.png");
+  background-size: cover; /* ✅ Ensures the image fits properly */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.07;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
