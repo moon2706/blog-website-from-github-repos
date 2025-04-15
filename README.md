@@ -1,40 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# MindHaven Blog Platform 🚀  
+A dynamic blogging platform that **integrates GitHub APIs**, allows users to interact through **likes, dislikes, and comments**, and features a sleek UI optimized for readability.
 
-## Getting Started
+## 🔹 Features  
+✅ **Fetch blog posts directly from a GitHub repository**  
+✅ **Interactive UI with real-time likes/dislikes/comments**  
+✅ **Optimized markdown rendering for clean formatting**  
+✅ **Smooth loading experience with a custom spinning logo**  
+✅ **Minimal local storage without a database (for now)**  
 
-First, run the development server:
+# 🌟 Acknowledgements
+**Inspired by clean blog UI/UX concepts**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Markdown rendering via React Markdown**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Loading animation crafted with CSS keyframes**
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# 🔮Future Improvements
+🗄️ **Integrate MongoDB/PostgreSQL for data persistence**
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+🔄 **Enable real-time syncing with WebSockets**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+🔐 **Add user authentication (OAuth2 / JWT)**
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📝 **Implement role-based comment moderation**
 
-## Learn More
+📊 **Add analytics for post engagement metrics**
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+# 🚧 Challenges & Solutions
+🧩 **GitHub Markdown Fetching**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+✔ **Used the GitHub REST API to dynamically fetch .md files**
 
-## Deploy on Vercel
+✔ **Parsed markdown content into HTML using react-markdown**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+⚡ **Real-time Interactions Without Reload**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+✔ **Replaced reload-based logic with useState & useEffect**
+✔ **State-driven UI provides seamless feedback to users**
+
+ 🎨 **Background Styling**
+ 
+✔ **Resolved blur & transparency issues**
+✔ **Used filter: opacity(0.1) on background layer, not content**
+
+# 💻 Technologies Used
+**Next.js – Frontend framework for dynamic rendering**
+
+**Express.js – Lightweight backend API for blog interactions**
+
+**GitHub API – To fetch markdown blog files dynamically**
+
+**React Hooks – Real-time state management**
+
+**CSS Animations – Custom loader and UI animations**
+
+# 🔗 API Endpoints
+
+**Method	Endpoint	Description**
+
+**GET	/post/:postId	Fetch blog post details**
+
+**POST	/like/:postId	Increase post likes**
+
+**POST	/dislike/:postId	Increase post dislikes**
+
+**POST	/comment/:postId	Add a new comment**
+
+⚠️ Note: As of now, all interactions are stored in local state variables and reset upon page reload.
